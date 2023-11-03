@@ -4,15 +4,24 @@
     background-color: #323232;
     color: #ffffff;
     padding: 10px;
+    cursor: pointer;
 }
 
 .card_img{
     width: 230px;
     height: 150px;
 }
+.text_wrapper{
+    height : 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .title{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .details{
     position: relative;
@@ -20,12 +29,16 @@
     bottom: 0px;
     font-size: 0.7rem;
     font-weight: 200;
+    justify-content: space-between;
 }
 .author_name{
     width: 50%;
     text-align: left;
+    overflow: hidden;
+    text-overflow: hidden;
 }
 .date{
-    width: 50%;
+    width: 30%;
     text-align: right;
+    text-overflow: ellipsis;
 }

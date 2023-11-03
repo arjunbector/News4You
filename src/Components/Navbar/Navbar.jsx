@@ -1,19 +1,32 @@
-import styles from './Navbar.module.css';
+import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
-       <div className={styles.left}>News<span>4</span>You</div>
-       <div className={styles.mid}>
+        <div className={styles.left}>
+      <Link to={"/"}>
+          News<span>4</span>You
+      </Link>
+        </div>
+      <div className={styles.mid}>
         <ul className={styles.navbar_list}>
-          <a href='/home'><li className={styles.navbar_item}>Home</li></a>
-          <a href='#'><li className={styles.navbar_item}>Discover</li></a>
-          <a href='#'><li className={styles.navbar_item}>Search</li></a>
-          <a href='#'><li className={styles.navbar_item}>Categories</li></a>
+          <Link to="/home">
+            <li className={styles.navbar_item}>Home</li>
+          </Link>
+          <Link to="#">
+            <li className={styles.navbar_item}>Discover</li>
+          </Link>
+          <Link to="#">
+            <li className={styles.navbar_item}>Search</li>
+          </Link>
+          <Link to="/categories">
+            <li className={styles.navbar_item}>Categories</li>
+          </Link>
         </ul>
-       </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

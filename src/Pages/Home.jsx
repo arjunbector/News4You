@@ -2,37 +2,56 @@ import { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import styles from "../styles/Home.module.css";
 import NewsCard from "../Components/NewsCard/NewsCard";
+import SkeletonCard from "../Components/Skeleton/SkeletonCard";
+const api_key = import.meta.env.VITE_API_KEY_1;
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [newsCards, setNewsCards] = useState(null);
 
-  const api_key = import.meta.env.VITE_API_KEY;
-  fetch(
-    `https://newsapi.org/v2/top-headlines?country=in&sortBy=popularity&apiKey=${api_key}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      setIsLoading(false);
-      setData(data);
-      setIsLoading(false);
-      const CardsArray = data.articles.map((article) => {
-        return (
-          <NewsCard
-            key={article.url}
-            author={article.author}
-            title={article.title}
-            imgURL={article.urlToImage}
-            url={article.url}
-          />
-        );
+
+
+  const getData = () => {
+    fetch(
+      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${api_key}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setIsLoading(false);
+        console.log(data);
+        setData(data);
+        const CardsArray = data.articles.map((article) => {
+            if (article.urlToImage  === null)
+            return null;
+          return (
+            <NewsCard
+              key={article.url}
+              author={article.author}
+              title={article.title}
+              imgURL={article.urlToImage}
+              url={article.url}
+              date={article.publishedAt}
+            />
+          );
+        });
+        setNewsCards(CardsArray);
       });
-      setNewsCards(CardsArray);
-    });
+  };
 
+  useEffect(() => {
+    getData();
+  }, []);
 
-    
+  const skeletonCardsArray = [
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+    <SkeletonCard />,
+  ];
 
   return (
     <>
@@ -42,7 +61,7 @@ const Home = () => {
           <h1 className={styles.title}>Top-Headlines</h1>
         </div>
         <div className={styles.cards_list}>
-            {isLoading ? "Loading..." : newsCards}
+          {isLoading ? skeletonCardsArray : newsCards}
         </div>
       </section>
     </>
@@ -50,3 +69,4 @@ const Home = () => {
 };
 
 export default Home;
+export {api_key};
