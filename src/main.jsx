@@ -6,7 +6,6 @@ import Main from "./Pages/Home.jsx";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import Categories from "./Pages/Categories.jsx";
 import Search from "./Pages/Search.jsx";
-import SearchResults from "./Pages/SearchResults.jsx";
 
 
 const router = createBrowserRouter([
@@ -29,12 +28,6 @@ const router = createBrowserRouter([
     path:"/search",
     element:<Search/>,
     errorElement:<ErrorPage/>,
-    // children:[
-    //   {
-    //     path:"search/:query",
-    //     element:<SearchResults/>
-    //   }
-    // ]
   }
 ]);
 

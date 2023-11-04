@@ -17,7 +17,7 @@ const Navbar = () => {
           <Link to="#">
             <li className={styles.navbar_item}>Discover</li>
           </Link>
-          <Link to="#">
+          <Link to="/search">
             <li className={styles.navbar_item}>Search</li>
           </Link>
           <Link to="/categories">

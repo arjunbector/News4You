@@ -1,7 +1,29 @@
-.input{
-    color: black;
+.search_section{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.btn{
+.heading{
+    padding: 10px 0px;
+}
+.input_wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.search_input{
+    all: unset;
+    background-color: white;
+    padding: 0px 10px;
     color: black;
+    border-radius: 20px 0 0 20px;
+    width: 50%;
+}
+.search_icon{
+    background-color: #da5a51;
+    padding: 5px 10px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
 }
