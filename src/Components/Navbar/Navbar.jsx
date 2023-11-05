@@ -14,9 +14,6 @@ const Navbar = () => {
           <Link to="/home">
             <li className={styles.navbar_item}>Home</li>
           </Link>
-          <Link to="#">
-            <li className={styles.navbar_item}>Discover</li>
-          </Link>
           <Link to="/search">
             <li className={styles.navbar_item}>Search</li>
           </Link>
