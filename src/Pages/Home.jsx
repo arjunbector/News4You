@@ -19,14 +19,13 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
-        console.log(data);
         setData(data);
         const CardsArray = data.articles.map((article) => {
             if (article.urlToImage  === null)
             return null;
           return (
             <NewsCard
-              key={article.url}
+            key={article.url}
               author={article.author}
               title={article.title}
               imgURL={article.urlToImage}

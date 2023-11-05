@@ -20,6 +20,9 @@
     z-index: 2;
 
 }
+.hamburger-react{
+    display: none;
+}
 
 .mid{
     display: flex;
@@ -38,4 +41,24 @@
 
 .navbar_item{
     list-style-type: none;
+}
+
+@media only screen and (max-width:500px){
+    .hamburger_icon{
+        display: block;
+        position: absolute;
+        left: 0px;
+        z-index: 0;
+    }
+    .mid{
+        display: none;
+    }
+    .navbar{
+        justify-content: center;
+    }
+    .left{
+        position: relative;
+        width: 100%;
+        justify-content: center;
+    }
 }

@@ -1,9 +1,13 @@
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import Hamburger from 'hamburger-react'
 
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
+      {/* <div className={styles.hamburger_icon} > */}
+          <Hamburger rounded/>
+          {/* </div> */}
         <div className={styles.left}>
       <Link to={"/"}>
           News<span>4</span>You

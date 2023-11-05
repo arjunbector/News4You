@@ -10,7 +10,6 @@ const NewsCard = (props) => {
   };
   const standardDateFormat = isoDate.toLocaleDateString("en-US", options);
   const handleClick = ()=>{
-    console.log("Click registered");
     window.open(props.url);
   }
 

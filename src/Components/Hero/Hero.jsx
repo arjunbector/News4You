@@ -4,7 +4,7 @@ import styles from "./Hero.module.css";
 import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <section>
+    <section className={styles.hero_section}>
       <div className={styles.img_div}>
         <img className={styles.main_img} src={news4you} alt="news4you" />
       </div>
