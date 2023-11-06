@@ -30,6 +30,10 @@ News4You is a web application that aggregates news from around the world, offeri
 
 ## Demo
  
+
+https://github.com/arjunbector/News4You/assets/115365396/9a7f9346-49be-4290-bfd7-4ca8ada9f414
+
+
 ## Getting Started
 
 These instructions will help you set up a copy of the project on your local machine for development and testing purposes.
