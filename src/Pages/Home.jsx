@@ -3,8 +3,7 @@ import Navbar from "../Components/Navbar/Navbar";
 import styles from "../styles/Home.module.css";
 import NewsCard from "../Components/NewsCard/NewsCard";
 import SkeletonCard from "../Components/Skeleton/SkeletonCard";
-const apiKeys = [import.meta.env.VITE_API_KEY_1, import.meta.env.VITE_API_KEY_2, import.meta.env.VITE_API_KEY_3]
-const api_key = apiKeys[Math.floor(Math.random() * apiKeys.length)];
+const api_key = import.meta.env.VITE_API_KEY;
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
@@ -37,6 +36,8 @@ const Home = () => {
         setNewsCards(CardsArray);
       });
   };
+
+  console.log(data);
 
   useEffect(() => {
     getData();

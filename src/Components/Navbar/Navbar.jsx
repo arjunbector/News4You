@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       {/* <div className={styles.hamburger_icon} > */}
-          <Hamburger rounded/>
+          {/* <Hamburger rounded/> */}
           {/* </div> */}
         <div className={styles.left}>
       <Link to={"/"}>
