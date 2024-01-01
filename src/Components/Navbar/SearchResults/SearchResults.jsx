@@ -17,7 +17,6 @@ const SearchResults = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        console.log(data);
         const CardsArray = data.articles.map((article) => {
           if (article.urlToImage === null) return null;
           return (
